@@ -5,4 +5,12 @@
     <input placeholder="enter the value"  [(ngModel)]="parentMessage"/>
     <app-child [message]="parentMessage"></app-child>
 
+
+    <!-- child to parent -->
+
+    <h2>Parent Component</h2>
+<app-child (messegeEvent)="receiveMessage($event)"></app-child>
+<p>{{ messageFromChild }}</p>
+
+
 </div>

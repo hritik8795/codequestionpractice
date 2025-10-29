@@ -10,4 +10,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class Parent {
 parentMessage="this is the parent message";
+
+
+  messageFromChild = '';
+
+  receiveMessage(event: any) {
+    this.messageFromChild = event;
+    alert('Message received from child: ' + event);
+  }
+
 }
