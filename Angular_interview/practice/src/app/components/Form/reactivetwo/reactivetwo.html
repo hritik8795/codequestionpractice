@@ -1,0 +1,31 @@
+<p>reactivetwo works!</p>
+<div class="container mx-auto">
+    <form [formGroup]="yourForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="username">Username:</label>
+                <input id="username" type="text" formControlName="username" class="form-control" />
+                <div class="text-danger mt-1"
+                    *ngIf="yourForm.get('username')?.touched && yourForm.get('username')?.errors">
+                    <small *ngIf="yourForm.get('username')?.errors?.['required']" class="text-danger">user name is
+                        required </small>
+                    <small *ngIf="yourForm?.get('username')?.errors?.['minlength']" class="text-danger">minimum length
+                        is 3</small>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 mb-3">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" class="form-control">
+                <div class="text-danger" *ngIf="yourForm.get('email')?.touched && yourForm.get('email')?.errors">
+                    <small *ngIf="yourForm.get('email')?.errors?.['required']" class="text-danger">Email is
+                        required</small>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-secondary">Submit Form</button>
+        </div>
+    </form>
+</div>
