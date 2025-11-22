@@ -15,5 +15,6 @@ constructor(private http:HttpClient,private userService:Behavioursubject){}
 ngOnInit(){
   this.http.get<any>('https://jsonplaceholder.typicode.com/users/1').subscribe(data=>{
     this.userService.setUser(data);
+    console.log('User data set in BehaviourSubject',data);
   }); }
 }

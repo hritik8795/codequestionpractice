@@ -15,7 +15,8 @@ export class Profile {
   ngOnInit(){
     this.userService.user$.subscribe(data=>{
       
-      this.userData=JSON.parse(data);
+      this.userData=data;
+      console.log('Profile component received user data:',data);
     });
 
   }
